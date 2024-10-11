@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    position: relative; /* Para colocar el fondo detrás del contenido */
+}
+
+h1 {
+    color: #4a90e2; /* Color pastel para el título */
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.7);
+    animation: fadeIn 2s ease-in-out;
+    margin-bottom: 20px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(270deg, #ffb3ba, #efa4e5, #d4a5d4, #ffb3ba); /* Gradiente pastel */
+    background-size: 400% 400%; /* Tamaño del fondo para permitir animación */
+    animation: gradientAnimation 15s ease infinite; /* Animación del gradiente */
+    z-index: -1; /* Colocar detrás de otros elementos */
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%; /* Comienza en la posición inicial */
+    }
+    50% {
+        background-position: 100% 50%; /* Cambia a la mitad */
+    }
+    100% {
+        background-position: 0% 50%; /* Regresa a la posición inicial */
+    }
+}
+
+#imagen {
+    border: 5px solid #4a90e2; /* Borde de la imagen */
+    border-radius: 15px; /* Bordes redondeados */
+    transition: transform 0.5s ease; /* Efecto de transformación */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+#imagen:hover {
+    transform: scale(1.05); /* Efecto al pasar el mouse */
+}
+
+button {
+    background-color: #ffb3ba; /* Color pastel del botón */
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #ff677d; /* Color más oscuro al pasar el mouse */
+    transform: scale(1.1); /* Aumentar tamaño al pasar el mouse */
+}
